@@ -4,8 +4,7 @@
     <title>Categories on Backend Byte</title>
     <link>http://backendbyte.com/categories/</link>
     <description>Recent content in Categories on Backend Byte</description>
-    <generator>Hugo -- 0.134.3</generator>
-    <language>en</language>
-    <atom:link href="http://backendbyte.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="http://backendbyte.com/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

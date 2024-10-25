@@ -4,18 +4,19 @@
     <title>Db on Backend Byte</title>
     <link>http://localhost:1313/tags/db/</link>
     <description>Recent content in Db on Backend Byte</description>
-    <generator>Hugo -- 0.134.3</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 08 Jul 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/db/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/db/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Race Condition between Database and Application in Docker Container</title>
       <link>http://localhost:1313/posts/2024-07-08-db-race-condition-notes-2024/</link>
       <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
+      
       <guid>http://localhost:1313/posts/2024-07-08-db-race-condition-notes-2024/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;../../img/race-condition.png&#34; alt=&#34;Race Condition between Database and Application in Docker Container&#34;  /&gt;
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;../../static/images/posts/2024/race-condition/race-condition.png&#34; alt=&#34;Race Condition between Database and Application in Docker Container&#34;  /&gt;
 &lt;/p&gt;
 &lt;p&gt;In the realm of containerized applications, particularly those orchestrated with Docker, developers often encounter a subtle yet critical challenge: managing the startup sequence of interdependent services. One of the most common and potentially problematic scenarios is the race condition that can occur between a database container and an application container. This article will provide an in-depth exploration of this race condition, with a focus on Go-based applications, and offer strategies to mitigate it effectively.&lt;/p&gt;</description>
     </item>
+    
   </channel>
 </rss>

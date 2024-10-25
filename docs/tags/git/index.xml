@@ -4,19 +4,20 @@
     <title>Git on Backend Byte</title>
     <link>http://backendbyte.com/tags/git/</link>
     <description>Recent content in Git on Backend Byte</description>
-    <generator>Hugo -- 0.134.3</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 17 May 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://backendbyte.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://backendbyte.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Essential Git Commands for Daily Use</title>
       <link>http://backendbyte.com/posts/2024-05-17-git-notes-2024/</link>
       <pubDate>Fri, 17 May 2024 00:00:00 +0000</pubDate>
+      
       <guid>http://backendbyte.com/posts/2024-05-17-git-notes-2024/</guid>
       <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;../../static/images/posts/default/post-bg-desk.jpg&#34; alt=&#34;Header Image&#34;  /&gt;
 
 As a engineer at Poridhi, I frequently need to use Git commands to manage my codebase, track changes, collaborate with team members, and maintain an organized workflow. Over the past five months of working in this industry, I&amp;rsquo;ve become familiar with several essential Git commands that have been invaluable in my daily work.&lt;/p&gt;
 &lt;p&gt;In this blog post, I&amp;rsquo;ll share these essential Git commands and provide a brief explanation along with a small example for each one. Whether you&amp;rsquo;re a beginner or an experienced developer, mastering these commands can greatly enhance your productivity and efficiency when working with Git repositories.&lt;/p&gt;</description>
     </item>
+    
   </channel>
 </rss>
