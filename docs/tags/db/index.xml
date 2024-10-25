@@ -13,9 +13,7 @@
       <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>http://backendbyte.com/posts/2024-07-08-db-race-condition-notes-2024/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;../../static/images/posts/2024/race-condition/race-condition.png&#34; alt=&#34;Race Condition between Database and Application in Docker Container&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;In the realm of containerized applications, particularly those orchestrated with Docker, developers often encounter a subtle yet critical challenge: managing the startup sequence of interdependent services. One of the most common and potentially problematic scenarios is the race condition that can occur between a database container and an application container. This article will provide an in-depth exploration of this race condition, with a focus on Go-based applications, and offer strategies to mitigate it effectively.&lt;/p&gt;</description>
+      <description>Exploring race conditions between database and application layers in Docker containers.</description>
     </item>
     
   </channel>

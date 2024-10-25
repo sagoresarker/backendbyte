@@ -13,13 +13,7 @@
       <pubDate>Sat, 18 May 2024 00:00:00 +0000</pubDate>
       
       <guid>http://backendbyte.com/posts/2024-05-18-k8s-setup-notes-2024/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;This article provides a step-by-step guide for setting up a Kubernetes cluster using k3s on a bare metal server. k3s is a lightweight Kubernetes distribution designed for resource-constrained environments, making it ideal for bare metal setups.&lt;/p&gt;
-&lt;h2 id=&#34;installation-steps&#34;&gt;Installation Steps&lt;/h2&gt;
-&lt;h3 id=&#34;1-install-k3s&#34;&gt;1. Install k3s&lt;/h3&gt;
-&lt;p&gt;Run the following command to install k3s on your bare metal server:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -sfL &amp;lt;https://get.k3s.io&amp;gt; | sh -
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This command fetches the k3s installation script from the internet and executes it on your server.&lt;/p&gt;</description>
+      <description>Configure Kubernetes on a bare metal server with k3s for streamlined deployment.</description>
     </item>
     
   </channel>

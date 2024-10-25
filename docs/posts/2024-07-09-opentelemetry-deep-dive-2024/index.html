@@ -7,12 +7,9 @@
 <meta name="robots" content="index, follow">
 <title>OpenTelemetry Demystified: From Concept to Implementation | Backend Byte</title>
 <meta name="keywords" content="golang">
-<meta name="description" content="
-
-Introduction to OpenTelemetry
-OpenTelemetry is an open-source observability framework designed to create and manage telemetry data such as traces, metrics, and logs. It provides a collection of tools, APIs, and SDKs used to instrument, generate, collect, and export telemetry data for analysis. The project aims to standardize the way telemetry data is collected and transmitted, making it easier for organizations to gain insights into their software&rsquo;s performance and behavior across different environments and technologies.">
+<meta name="description" content="A comprehensive guide to understanding and implementing OpenTelemetry for observability.">
 <meta name="author" content="Backend Byte">
-<link rel="canonical" href="http://backendbyte.com/posts/2024-07-09-opentelemetry-deep-dive-2024/">
+<link rel="canonical" href="http://backendbyte.com/posts/2024-07-09-opentelemetry-guide/">
 <link crossorigin="anonymous" href="../../assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="../../assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
@@ -61,10 +58,7 @@ OpenTelemetry is an open-source observability framework designed to create and m
 
     </style>
 </noscript><meta property="og:title" content="OpenTelemetry Demystified: From Concept to Implementation" />
-<meta property="og:description" content="
-
-Introduction to OpenTelemetry
-OpenTelemetry is an open-source observability framework designed to create and manage telemetry data such as traces, metrics, and logs. It provides a collection of tools, APIs, and SDKs used to instrument, generate, collect, and export telemetry data for analysis. The project aims to standardize the way telemetry data is collected and transmitted, making it easier for organizations to gain insights into their software&rsquo;s performance and behavior across different environments and technologies." />
+<meta property="og:description" content="A comprehensive guide to understanding and implementing OpenTelemetry for observability." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://backendbyte.com/posts/2024-07-09-opentelemetry-deep-dive-2024/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-07-09T00:00:00+00:00" />
@@ -72,10 +66,7 @@ OpenTelemetry is an open-source observability framework designed to create and m
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="OpenTelemetry Demystified: From Concept to Implementation"/>
-<meta name="twitter:description" content="
-
-Introduction to OpenTelemetry
-OpenTelemetry is an open-source observability framework designed to create and manage telemetry data such as traces, metrics, and logs. It provides a collection of tools, APIs, and SDKs used to instrument, generate, collect, and export telemetry data for analysis. The project aims to standardize the way telemetry data is collected and transmitted, making it easier for organizations to gain insights into their software&rsquo;s performance and behavior across different environments and technologies."/>
+<meta name="twitter:description" content="A comprehensive guide to understanding and implementing OpenTelemetry for observability."/>
 
 
 <script type="application/ld+json">
@@ -104,7 +95,7 @@ OpenTelemetry is an open-source observability framework designed to create and m
   "@type": "BlogPosting",
   "headline": "OpenTelemetry Demystified: From Concept to Implementation",
   "name": "OpenTelemetry Demystified: From Concept to Implementation",
-  "description": " Introduction to OpenTelemetry OpenTelemetry is an open-source observability framework designed to create and manage telemetry data such as traces, metrics, and logs. It provides a collection of tools, APIs, and SDKs used to instrument, generate, collect, and export telemetry data for analysis. The project aims to standardize the way telemetry data is collected and transmitted, making it easier for organizations to gain insights into their software\u0026rsquo;s performance and behavior across different environments and technologies.\n",
+  "description": "A comprehensive guide to understanding and implementing OpenTelemetry for observability.",
   "keywords": [
     "golang"
   ],
@@ -192,6 +183,11 @@ OpenTelemetry is an open-source observability framework designed to create and m
                     <span>Tags</span>
                 </a>
             </li>
+            <li>
+                <a href="http://backendbyte.com/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -203,171 +199,71 @@ OpenTelemetry is an open-source observability framework designed to create and m
     <h1 class="post-title">
       OpenTelemetry Demystified: From Concept to Implementation
     </h1>
-    <div class="post-meta">&lt;span title=&#39;2024-07-09 00:00:00 &#43;0000 UTC&#39;&gt;July 9, 2024&lt;/span&gt;&amp;nbsp;·&amp;nbsp;9 min&amp;nbsp;·&amp;nbsp;Backend Byte
-
-</div>
+    <div class="post-description">
+      A comprehensive guide to understanding and implementing OpenTelemetry for observability.
+    </div>
   </header> <div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
             <span class="details">Table of Contents</span>
         </summary>
 
-        <div class="inner"><ul>
-                <li>
-                    <a href="#introduction-to-opentelemetry" aria-label="Introduction to OpenTelemetry">Introduction to OpenTelemetry</a></li>
-                <li>
-                    <a href="#core-components-of-opentelemetry" aria-label="Core Components of OpenTelemetry">Core Components of OpenTelemetry</a><ul>
-                        <ul>
-                        
-                <li>
-                    <a href="#api" aria-label="API">API</a></li>
-                <li>
-                    <a href="#sdk" aria-label="SDK">SDK</a></li>
-                <li>
-                    <a href="#instrumentation-libraries" aria-label="Instrumentation Libraries">Instrumentation Libraries</a></li>
-                <li>
-                    <a href="#collector" aria-label="Collector">Collector</a></li>
-                <li>
-                    <a href="#exporters" aria-label="Exporters">Exporters</a></li>
-                <li>
-                    <a href="#propagators" aria-label="Propagators">Propagators</a></li>
-                <li>
-                    <a href="#context" aria-label="Context">Context</a></li></ul>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#configuration-concepts" aria-label="Configuration Concepts">Configuration Concepts</a><ul>
-                        <ul>
-                        
-                <li>
-                    <a href="#instrumentation" aria-label="Instrumentation">Instrumentation</a></li>
-                <li>
-                    <a href="#sampling" aria-label="Sampling">Sampling</a></li>
-                <li>
-                    <a href="#resource-detection" aria-label="Resource Detection">Resource Detection</a></li>
-                <li>
-                    <a href="#context-propagation" aria-label="Context Propagation">Context Propagation</a></li>
-                <li>
-                    <a href="#batching-and-exporting" aria-label="Batching and Exporting">Batching and Exporting</a></li>
-                <li>
-                    <a href="#collector-configuration" aria-label="Collector Configuration">Collector Configuration</a></li>
-                <li>
-                    <a href="#secure-communication" aria-label="Secure Communication">Secure Communication</a></li></ul>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#implementing-opentelemetry-in-go" aria-label="Implementing OpenTelemetry in Go">Implementing OpenTelemetry in Go</a><ul>
-                        <ul>
-                        
-                <li>
-                    <a href="#setting-up-a-tracer" aria-label="Setting Up a Tracer">Setting Up a Tracer</a></li>
-                <li>
-                    <a href="#creating-a-span" aria-label="Creating a Span">Creating a Span</a></li>
-                <li>
-                    <a href="#span-naming-conventions" aria-label="Span Naming Conventions">Span Naming Conventions</a></li></ul>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#advanced-features-and-best-practices" aria-label="Advanced Features and Best Practices">Advanced Features and Best Practices</a><ul>
-                        <ul>
-                        
-                <li>
-                    <a href="#metrics" aria-label="Metrics">Metrics</a></li>
-                <li>
-                    <a href="#sampling-strategies" aria-label="Sampling Strategies">Sampling Strategies</a></li>
-                <li>
-                    <a href="#resource-detection-1" aria-label="Resource Detection">Resource Detection</a></li></ul>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#error-handling-and-status" aria-label="Error Handling and Status">Error Handling and Status</a><ul>
-                        <ul>
-                        
-                <li>
-                    <a href="#recording-errors" aria-label="Recording Errors">Recording Errors</a></li>
-                <li>
-                    <a href="#status-codes" aria-label="Status Codes">Status Codes</a></li>
-                <li>
-                    <a href="#best-practices-for-error-handling" aria-label="Best Practices for Error Handling">Best Practices for Error Handling</a></li></ul>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#http-vs-grpc-when-to-use-each" aria-label="HTTP vs gRPC: When to Use Each">HTTP vs gRPC: When to Use Each</a><ul>
-                        <ul>
-                        
-                <li>
-                    <a href="#http-exporter" aria-label="HTTP Exporter">HTTP Exporter</a></li>
-                <li>
-                    <a href="#grpc-exporter" aria-label="gRPC Exporter">gRPC Exporter</a></li></ul>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#context-propagation-in-depth" aria-label="Context Propagation in Depth">Context Propagation in Depth</a><ul>
-                        <ul>
-                        
-                <li>
-                    <a href="#understanding-context-propagation" aria-label="Understanding Context Propagation">Understanding Context Propagation</a></li>
-                <li>
-                    <a href="#w3c-trace-context" aria-label="W3C Trace Context">W3C Trace Context</a></li>
-                <li>
-                    <a href="#implementing-context-propagation" aria-label="Implementing Context Propagation">Implementing Context Propagation</a></li>
-                <li>
-                    <a href="#baggage" aria-label="Baggage">Baggage</a></li>
-                <li>
-                    <a href="#best-practices-for-context-propagation" aria-label="Best Practices for Context Propagation">Best Practices for Context Propagation</a></li></ul>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#why-tech-giants-adopt-opentelemetry" aria-label="Why Tech Giants Adopt OpenTelemetry">Why Tech Giants Adopt OpenTelemetry</a><ul>
-                        <ul>
-                        
-                <li>
-                    <a href="#vendor-neutrality" aria-label="Vendor Neutrality">Vendor Neutrality</a></li>
-                <li>
-                    <a href="#standardization" aria-label="Standardization">Standardization</a></li>
-                <li>
-                    <a href="#extensibility" aria-label="Extensibility">Extensibility</a></li>
-                <li>
-                    <a href="#performance" aria-label="Performance">Performance</a></li>
-                <li>
-                    <a href="#comprehensive-coverage" aria-label="Comprehensive Coverage">Comprehensive Coverage</a></li>
-                <li>
-                    <a href="#cloud-native" aria-label="Cloud Native">Cloud Native</a><ul>
-                        
-                <li>
-                    <a href="#community-support" aria-label="Community Support">Community Support</a></li></ul>
-                </li></ul>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#best-practices-for-opentelemetry-implementation" aria-label="Best Practices for OpenTelemetry Implementation">Best Practices for OpenTelemetry Implementation</a><ul>
-                        <ul>
-                        
-                <li>
-                    <a href="#start-with-key-services" aria-label="Start with Key Services">Start with Key Services</a></li>
-                <li>
-                    <a href="#use-automatic-instrumentation" aria-label="Use Automatic Instrumentation">Use Automatic Instrumentation</a></li>
-                <li>
-                    <a href="#enrich-with-manual-instrumentation" aria-label="Enrich with Manual Instrumentation">Enrich with Manual Instrumentation</a></li>
-                <li>
-                    <a href="#implement-effective-sampling" aria-label="Implement Effective Sampling">Implement Effective Sampling</a></li>
-                <li>
-                    <a href="#standardize-naming-and-attributes" aria-label="Standardize Naming and Attributes">Standardize Naming and Attributes</a></li>
-                <li>
-                    <a href="#monitor-opentelemetry-itself" aria-label="Monitor OpenTelemetry Itself">Monitor OpenTelemetry Itself</a></li>
-                <li>
-                    <a href="#educate-your-team" aria-label="Educate Your Team">Educate Your Team</a></li></ul>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
-                </li>
-            </ul>
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-opentelemetry">Introduction to OpenTelemetry</a></li>
+    <li><a href="#core-components-of-opentelemetry">Core Components of OpenTelemetry</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#configuration-concepts">Configuration Concepts</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#implementing-opentelemetry-in-go">Implementing OpenTelemetry in Go</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-features-and-best-practices">Advanced Features and Best Practices</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#error-handling-and-status">Error Handling and Status</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#http-vs-grpc-when-to-use-each">HTTP vs gRPC: When to Use Each</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#context-propagation-in-depth">Context Propagation in Depth</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#why-tech-giants-adopt-opentelemetry">Why Tech Giants Adopt OpenTelemetry</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#best-practices-for-opentelemetry-implementation">Best Practices for OpenTelemetry Implementation</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
         </div>
     </details>
 </div>
 
-  <div class="post-content"><p><img loading="lazy" src="../../static/images/posts/2024/openTelemetry/OpenTelemetry.png" alt="OpenTelemetry Demystified: From Concept to Implementation"  />
+  <div class="post-content"><p><img loading="lazy" src="../../images/posts/2024/openTelemetry/OpenTelemetry.png" alt="OpenTelemetry Demystified: From Concept to Implementation"  />
 </p>
 <h2 id="introduction-to-opentelemetry">Introduction to OpenTelemetry<a hidden class="anchor" aria-hidden="true" href="#introduction-to-opentelemetry">#</a></h2>
 <p>OpenTelemetry is an open-source observability framework designed to create and manage telemetry data such as traces, metrics, and logs. It provides a collection of tools, APIs, and SDKs used to instrument, generate, collect, and export telemetry data for analysis. The project aims to standardize the way telemetry data is collected and transmitted, making it easier for organizations to gain insights into their software&rsquo;s performance and behavior across different environments and technologies.</p>
