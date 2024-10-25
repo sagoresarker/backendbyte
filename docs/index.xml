@@ -4,82 +4,65 @@
     <title>Backend Byte</title>
     <link>http://backendbyte.com/</link>
     <description>Recent content on Backend Byte</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.134.3</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 25 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://backendbyte.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://backendbyte.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OpenTelemetry Demystified: From Concept to Implementation</title>
       <link>http://backendbyte.com/posts/2024-07-09-opentelemetry-deep-dive-2024/</link>
       <pubDate>Tue, 09 Jul 2024 00:00:00 +0000</pubDate>
-      
       <guid>http://backendbyte.com/posts/2024-07-09-opentelemetry-deep-dive-2024/</guid>
       <description>A comprehensive guide to understanding and implementing OpenTelemetry for observability.</description>
     </item>
-    
     <item>
       <title>Understanding Go&#39;s net/http Package: A Comprehensive Guide</title>
       <link>http://backendbyte.com/posts/2024-07-09-db-net-http-package-golang-2024/</link>
       <pubDate>Tue, 09 Jul 2024 00:00:00 +0000</pubDate>
-      
       <guid>http://backendbyte.com/posts/2024-07-09-db-net-http-package-golang-2024/</guid>
       <description>In-depth guide to Go&amp;#39;s net/http package for building web applications.</description>
     </item>
-    
     <item>
       <title>Optimizing PostgreSQL for Large-Scale Data Insertions: From INSERT to COPY and Beyond</title>
       <link>http://backendbyte.com/posts/2024-07-08-postgres-bulk-insert-2024/</link>
       <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
-      
       <guid>http://backendbyte.com/posts/2024-07-08-postgres-bulk-insert-2024/</guid>
       <description>Techniques for optimizing PostgreSQL performance in large-scale data insertion scenarios.</description>
     </item>
-    
     <item>
       <title>Race Condition between Database and Application in Docker Container</title>
       <link>http://backendbyte.com/posts/2024-07-08-db-race-condition-notes-2024/</link>
       <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
-      
       <guid>http://backendbyte.com/posts/2024-07-08-db-race-condition-notes-2024/</guid>
       <description>Exploring race conditions between database and application layers in Docker containers.</description>
     </item>
-    
     <item>
       <title>ArgoCD configuration on Bare metal with nginx-ingress and cloudflare tunnel</title>
       <link>http://backendbyte.com/posts/2024-05-18-argocd-deployment-notes-2024/</link>
       <pubDate>Sat, 18 May 2024 00:00:00 +0000</pubDate>
-      
       <guid>http://backendbyte.com/posts/2024-05-18-argocd-deployment-notes-2024/</guid>
       <description>Setting Up ArgoCD: A Guide to Configuration with Nginx-Ingress and Cloudflare Tunnel on Bare Meta.</description>
     </item>
-    
     <item>
       <title>Getting Started with PostgreSQL: Essential psql Command Line Skills for Beginners</title>
       <link>http://backendbyte.com/posts/2024-05-18-psql-commands-notes-2024/</link>
       <pubDate>Sat, 18 May 2024 00:00:00 +0000</pubDate>
-      
       <guid>http://backendbyte.com/posts/2024-05-18-psql-commands-notes-2024/</guid>
       <description>A beginner&amp;#39;s guide to mastering PostgreSQL and essential psql command line skills.</description>
     </item>
-    
     <item>
       <title>Setting Up a Kubernetes Cluster with k3s on Bare Metal Server</title>
       <link>http://backendbyte.com/posts/2024-05-18-k8s-setup-notes-2024/</link>
       <pubDate>Sat, 18 May 2024 00:00:00 +0000</pubDate>
-      
       <guid>http://backendbyte.com/posts/2024-05-18-k8s-setup-notes-2024/</guid>
       <description>Configure Kubernetes on a bare metal server with k3s for streamlined deployment.</description>
     </item>
-    
     <item>
       <title>Essential Git Commands for Daily Use</title>
       <link>http://backendbyte.com/posts/2024-05-17-git-notes-2024/</link>
       <pubDate>Fri, 17 May 2024 00:00:00 +0000</pubDate>
-      
       <guid>http://backendbyte.com/posts/2024-05-17-git-notes-2024/</guid>
       <description>A comprehensive guide to essential Git commands for daily use, based on real-world experience.</description>
     </item>
-    
-    
-    
   </channel>
 </rss>

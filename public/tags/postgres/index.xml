@@ -4,21 +4,16 @@
     <title>Postgres on Backend Byte</title>
     <link>http://localhost:1313/tags/postgres/</link>
     <description>Recent content in Postgres on Backend Byte</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.134.3</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 08 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/postgres/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/postgres/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Optimizing PostgreSQL for Large-Scale Data Insertions: From INSERT to COPY and Beyond</title>
       <link>http://localhost:1313/posts/2024-07-08-postgres-bulk-insert-2024/</link>
       <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/posts/2024-07-08-postgres-bulk-insert-2024/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;../../static/images/posts/2024/postgres-copy-cmd/postgresql-copy-cmd.png&#34; alt=&#34;Optimizing PostgreSQL for Large-Scale Data Insertion&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;When dealing with massive datasets in PostgreSQL, efficiency becomes crucial. Recently, I faced a challenge while inserting 20 million records into a database while working on one of my hobby projects. This experience led me to explore various optimization techniques, from query optimization to server configuration tweaks.&lt;/p&gt;
-&lt;h2 id=&#34;the-journey-from-insert-to-copy&#34;&gt;The Journey from INSERT to COPY&lt;/h2&gt;
-&lt;p&gt;Initially, I used the traditional INSERT approach, which proved to be excruciatingly slow, taking hours to complete. This prompted me to search for a more efficient solution, leading me to the COPY command.&lt;/p&gt;</description>
+      <description>Techniques for optimizing PostgreSQL performance in large-scale data insertion scenarios.</description>
     </item>
-    
   </channel>
 </rss>

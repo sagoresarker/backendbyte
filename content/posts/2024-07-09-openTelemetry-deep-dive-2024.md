@@ -7,7 +7,7 @@ tags: ["golang"]
 showToc: true
 TocOpen: false
 draft: false
-hidemeta: true
+hidemeta: false
 comments: true
 canonicalURL: "http://backendbyte.com/posts/2024-07-09-opentelemetry-guide/"
 disableHLJS: false

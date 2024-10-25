@@ -7,7 +7,7 @@ tags: ["psql"]
 showToc: true
 TocOpen: false
 draft: false
-hidemeta: true
+hidemeta: false
 comments: true
 canonicalURL: "http://backendbyte.com/posts/2024-05-18-postgresql-psql-basics/"
 disableHLJS: false

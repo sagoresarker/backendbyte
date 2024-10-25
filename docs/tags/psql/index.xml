@@ -4,17 +4,16 @@
     <title>Psql on Backend Byte</title>
     <link>http://backendbyte.com/tags/psql/</link>
     <description>Recent content in Psql on Backend Byte</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.134.3</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 18 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://backendbyte.com/tags/psql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 May 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://backendbyte.com/tags/psql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started with PostgreSQL: Essential psql Command Line Skills for Beginners</title>
       <link>http://backendbyte.com/posts/2024-05-18-psql-commands-notes-2024/</link>
       <pubDate>Sat, 18 May 2024 00:00:00 +0000</pubDate>
-      
       <guid>http://backendbyte.com/posts/2024-05-18-psql-commands-notes-2024/</guid>
       <description>A beginner&amp;#39;s guide to mastering PostgreSQL and essential psql command line skills.</description>
     </item>
-    
   </channel>
 </rss>

@@ -7,7 +7,7 @@ tags: ["argocd"]
 showToc: true
 TocOpen: false
 draft: false
-hidemeta: true
+hidemeta: false
 comments: true
 canonicalURL: "http://backendbyte.com/posts/2024-05-17-git-notes-2024/"
 disableHLJS: false
