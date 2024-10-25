@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Golang on Backend Byte</title>
+    <link>http://backendbyte.com/tags/golang/</link>
+    <description>Recent content in Golang on Backend Byte</description>
+    <generator>Hugo -- 0.134.3</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 09 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://backendbyte.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenTelemetry Demystified: From Concept to Implementation</title>
+      <link>http://backendbyte.com/posts/2024-07-09-opentelemetry-deep-dive-2024/</link>
+      <pubDate>Tue, 09 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://backendbyte.com/posts/2024-07-09-opentelemetry-deep-dive-2024/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;../../static/images/posts/2024/openTelemetry/OpenTelemetry.png&#34; alt=&#34;OpenTelemetry Demystified: From Concept to Implementation&#34;  /&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;introduction-to-opentelemetry&#34;&gt;Introduction to OpenTelemetry&lt;/h2&gt;
+&lt;p&gt;OpenTelemetry is an open-source observability framework designed to create and manage telemetry data such as traces, metrics, and logs. It provides a collection of tools, APIs, and SDKs used to instrument, generate, collect, and export telemetry data for analysis. The project aims to standardize the way telemetry data is collected and transmitted, making it easier for organizations to gain insights into their software&amp;rsquo;s performance and behavior across different environments and technologies.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understanding Go&#39;s net/http Package: A Comprehensive Guide</title>
+      <link>http://backendbyte.com/posts/2024-07-09-db-net-http-package-golang-2024/</link>
+      <pubDate>Tue, 09 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://backendbyte.com/posts/2024-07-09-db-net-http-package-golang-2024/</guid>
+      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;../../static/images/posts/2024/net-http/net-http-package-golang.png&#34; alt=&#34;Understanding Go&amp;rsquo;s net/http Package: A Comprehensive Guide&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Go&amp;rsquo;s net/http package is a powerful and versatile library for building HTTP clients and servers. It provides a robust set of tools for handling HTTP requests and responses, making it an essential component for web development in Go. This article will dive deep into the net/http package, exploring its core concepts, key features, and practical applications.&lt;/p&gt;
+&lt;h2 id=&#34;overview-of-the-nethttp-package&#34;&gt;Overview of the net/http Package:&lt;/h2&gt;
+&lt;p&gt;The net/http package is part of Go&amp;rsquo;s standard library and offers a high-level interface for HTTP client and server implementations. It abstracts away many of the complexities involved in network communication, allowing developers to focus on application logic rather than low-level network details.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.134.3"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Backend Byte</title>
+
+<meta name="description" content="Every failure is leading towards success.">
+<meta name="author" content="">
+<link rel="canonical" href="http://backendbyte.com/">
+<link crossorigin="anonymous" href="../../assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://backendbyte.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://backendbyte.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://backendbyte.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://backendbyte.com/apple-touch-icon.png">
+<link rel="mask-icon" href="http://backendbyte.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://backendbyte.com/index.xml">
+<link rel="alternate" type="application/json" href="http://backendbyte.com/index.json">
+<link rel="alternate" hreflang="en" href="http://backendbyte.com/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><link rel="icon" type="image/x-icon" href="../../assets/icons/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/icons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/icons/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/icons/apple-touch-icon.png">
+<link rel="mask-icon" href="../../assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff"><meta property="og:title" content="Backend Byte" />
+<meta property="og:description" content="Every failure is leading towards success." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://backendbyte.com/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Backend Byte"/>
+<meta name="twitter:description" content="Every failure is leading towards success."/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Backend Byte",
+  "url": "http://backendbyte.com/",
+  "description": "Every failure is leading towards success.",
+  "thumbnailUrl": "http://backendbyte.com/favicon.ico",
+  "sameAs": [
+      
+  ]
+}
+</script>
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://backendbyte.com/" accesskey="h" title="Backend Byte (Alt + H)">
+                <img src="http://backendbyte.com/logo.png" alt="" aria-label="logo"
+                    height="35">Backend Byte</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://backendbyte.com/" title="Home">
+                    <span class="active">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://backendbyte.com/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://backendbyte.com/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">ArgoCD configuration on Bare metal with nginx-ingress and cloudflare tunnel
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Before starting, lets visualize a illustration how it works User initiates a request to a web application hosted on a cluster server. DNS resolution directs the user to Cloudflare. Cloudflare acts as a reverse proxy, terminating the SSL/TLS connection and initiating a tunnel to the Nginx ingress controller in the Kubernetes cluster. The Nginx ingress controller routes the request based on the Host header to the appropriate service within the cluster. The service distributes traffic across pods running the application. A selected pod processes the request and generates a response. The response travels back through the Nginx ingress controller, Cloudflare tunnel, and finally to the user’s device.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-05-18 00:00:00 +0000 UTC'>May 18, 2024</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Backend Byte</footer>
+  <a class="entry-link" aria-label="post link to ArgoCD configuration on Bare metal with nginx-ingress and cloudflare tunnel" href="http://backendbyte.com/posts/2024-05-18-argocd-deployment-notes-2024/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Getting Started with PostgreSQL:- Essential psql Command Line Skills for Beginners
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Nearly three years ago, I upgraded to Ubuntu 22.04 LTS. After the upgrade, I ran into problems with pgAdmin 4 when working with PostgreSQL. As a result, I had to rely on the psql interactive shell for all my tasks. Here, I will share some basic psql commands that I frequently use.
+1. Enter psql shell To interact with PostgreSQL from the terminal, enter the psql shell. To enter the psql shell, type:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-05-18 00:00:00 +0000 UTC'>May 18, 2024</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;Backend Byte</footer>
+  <a class="entry-link" aria-label="post link to Getting Started with PostgreSQL:- Essential psql Command Line Skills for Beginners" href="http://backendbyte.com/posts/2024-05-18-psql-commands-notes-2024/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Setting Up a Kubernetes Cluster with k3s on Bare Metal Server
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Introduction This article provides a step-by-step guide for setting up a Kubernetes cluster using k3s on a bare metal server. k3s is a lightweight Kubernetes distribution designed for resource-constrained environments, making it ideal for bare metal setups.
+Installation Steps 1. Install k3s Run the following command to install k3s on your bare metal server:
+curl -sfL &lt;https://get.k3s.io&gt; | sh - This command fetches the k3s installation script from the internet and executes it on your server.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-05-18 00:00:00 +0000 UTC'>May 18, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Backend Byte</footer>
+  <a class="entry-link" aria-label="post link to Setting Up a Kubernetes Cluster with k3s on Bare Metal Server" href="http://backendbyte.com/posts/2024-05-18-k8s-setup-notes-2024/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Essential Git Commands for Daily Use
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> As a engineer at Poridhi, I frequently need to use Git commands to manage my codebase, track changes, collaborate with team members, and maintain an organized workflow. Over the past five months of working in this industry, I’ve become familiar with several essential Git commands that have been invaluable in my daily work.
+In this blog post, I’ll share these essential Git commands and provide a brief explanation along with a small example for each one. Whether you’re a beginner or an experienced developer, mastering these commands can greatly enhance your productivity and efficiency when working with Git repositories.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-05-17 00:00:00 +0000 UTC'>May 17, 2024</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Backend Byte</footer>
+  <a class="entry-link" aria-label="post link to Essential Git Commands for Daily Use" href="http://backendbyte.com/posts/2024-05-17-git-notes-2024/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://backendbyte.com/">
+      «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="http://backendbyte.com/page/3/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="http://backendbyte.com/">Backend Byte</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
