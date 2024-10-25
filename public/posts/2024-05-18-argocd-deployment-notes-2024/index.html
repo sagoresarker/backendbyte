@@ -205,7 +205,7 @@ User initiates a request to a web application hosted on a cluster server. DNS re
 </div>
 
   <div class="post-content"><h2 id="before-starting-lets-visualize-a-illustration-how-it-works">Before starting, lets visualize a illustration how it works<a hidden class="anchor" aria-hidden="true" href="#before-starting-lets-visualize-a-illustration-how-it-works">#</a></h2>
-<p><img loading="lazy" src="../../static/argocd/nginx-ingress.png" alt="nginx-ingress.png"  />
+<p><img loading="lazy" src="../../static/images/posts/2024/argocd/nginx-ingress.png" alt="nginx-ingress.png"  />
 </p>
 <p>User initiates a request to a web application hosted on a cluster server. DNS resolution directs the user to Cloudflare. Cloudflare acts as a reverse proxy, terminating the SSL/TLS connection and initiating a tunnel to the Nginx ingress controller in the Kubernetes cluster. The Nginx ingress controller routes the request based on the Host header to the appropriate service within the cluster. The service distributes traffic across pods running the application. A selected pod processes the request and generates a response. The response travels back through the Nginx ingress controller, Cloudflare tunnel, and finally to the user&rsquo;s device.</p>
 <h1 id="install-and-configure-argocd-and-nginx-ingress">Install and configure argocd and nginx-ingress<a hidden class="anchor" aria-hidden="true" href="#install-and-configure-argocd-and-nginx-ingress">#</a></h1>
@@ -288,14 +288,14 @@ User initiates a request to a web application hosted on a cluster server. DNS re
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ae81ff">kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/baremetal/deploy.yaml</span>
 </span></span></code></pre></div><p>Modify the simply set <code>server.insecure: &quot;true&quot;</code> in the <code>argocd-cmd-params-cm</code> ConfigMap</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo kubectl -n argocd edit configmap argocd-cmd-params-cm
-</span></span></code></pre></div><p><img loading="lazy" src="../../img/argocd/Screenshot%20from%202024-02-27%2014-56-51.png" alt="Screenshot from 2024-02-27 14-56-51.png"  />
+</span></span></code></pre></div><p><img loading="lazy" src="../../static/images/posts/2024/argocd/configmap.png" alt="configmap"  />
 </p>
 <p>Make sure to stop redirection http to https inside cloudflare</p>
-<p><img loading="lazy" src="../../img/argocd/Screenshot%20from%202024-02-27%2014-59-54.png" alt="Screenshot from 2024-02-27 14-59-54.png"  />
+<p><img loading="lazy" src="../../static/images/posts/2024/argocd/cloudflare-dashboard.png" alt="cloudflare-dashboard"  />
 </p>
 <p>Next make the change in nginx ingress controller deployment to add the enable-ssl-passthrough flag as shown below</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl edit deploy ingress-nginx-controller -n ingress-nginx
-</span></span></code></pre></div><p><img loading="lazy" src="../../img/argocd/Screenshot%20from%202024-03-03%2009-14-00.png" alt="Screenshot from 2024-03-03 09-14-00.png"  />
+</span></span></code></pre></div><p><img loading="lazy" src="../../static/images/posts/2024/argocd/spec-format.png" alt="spec-format"  />
 </p>
 <p>Now its time to apply those two argocd-ingress.yml and argocd-tunnel.yml file</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo kubectl apply -f argocd-ingress.yml
@@ -309,7 +309,8 @@ User initiates a request to a web application hosted on a cluster server. DNS re
 <p>before creating application, you must login to the sysyem. first check the argocd-server svc ip, then</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get svc -n argocd
 </span></span></code></pre></div><h2 id="look-for-argocd-server-ip">Look for argocd-server ip<a hidden class="anchor" aria-hidden="true" href="#look-for-argocd-server-ip">#</a></h2>
-<p>![Screenshot from 2024-03-03 08-41-37.png](img/argocd/Screenshot from 2024-03-03 08-41-37.png)</p>
+<p><img loading="lazy" src="../../static/images/posts/2024/argocd/kubectl-output.png" alt="kubectl-output"  />
+</p>
 <h2 id="login-to-argocd">Login to argocd<a hidden class="anchor" aria-hidden="true" href="#login-to-argocd">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>argocd login 10.43.168.110
 </span></span><span style="display:flex;"><span>

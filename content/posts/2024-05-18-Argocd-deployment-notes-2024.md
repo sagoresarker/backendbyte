@@ -12,7 +12,7 @@ tags:
 
 ## Before starting, lets visualize a illustration how it works
 
-![nginx-ingress.png](/static/argocd/nginx-ingress.png)
+![nginx-ingress.png](/static/images/posts/2024/argocd/nginx-ingress.png)
 
 User initiates a request to a web application hosted on a cluster server. DNS resolution directs the user to Cloudflare. Cloudflare acts as a reverse proxy, terminating the SSL/TLS connection and initiating a tunnel to the Nginx ingress controller in the Kubernetes cluster. The Nginx ingress controller routes the request based on the Host header to the appropriate service within the cluster. The service distributes traffic across pods running the application. A selected pod processes the request and generates a response. The response travels back through the Nginx ingress controller, Cloudflare tunnel, and finally to the user's device.
 
@@ -131,11 +131,11 @@ Modify the simply set `server.insecure: "true"` in the `argocd-cmd-params-cm` Co
 sudo kubectl -n argocd edit configmap argocd-cmd-params-cm
 ```
 
-![Screenshot from 2024-02-27 14-56-51.png](/img/argocd/Screenshot%20from%202024-02-27%2014-56-51.png)
+![configmap](/static/images/posts/2024/argocd/configmap.png)
 
 Make sure to stop redirection http to https inside cloudflare
 
-![Screenshot from 2024-02-27 14-59-54.png](/img/argocd/Screenshot%20from%202024-02-27%2014-59-54.png)
+![cloudflare-dashboard](/static/images/posts/2024/argocd/cloudflare-dashboard.png)
 
 Next make the change in nginx ingress controller deployment to add the enable-ssl-passthrough flag as shown below
 
@@ -143,7 +143,7 @@ Next make the change in nginx ingress controller deployment to add the enable-ss
 kubectl edit deploy ingress-nginx-controller -n ingress-nginx
 ```
 
-![Screenshot from 2024-03-03 09-14-00.png](/img/argocd/Screenshot%20from%202024-03-03%2009-14-00.png)
+![spec-format](/static/images/posts/2024/argocd/spec-format.png)
 
 Now its time to apply those two argocd-ingress.yml and argocd-tunnel.yml file
 
@@ -172,7 +172,7 @@ kubectl get svc -n argocd
 
 ## Look for argocd-server ip
 
-![Screenshot from 2024-03-03 08-41-37.png](img/argocd/Screenshot from 2024-03-03 08-41-37.png)
+![kubectl-output](/static/images/posts/2024/argocd/kubectl-output.png)
 
 ## Login to argocd
 

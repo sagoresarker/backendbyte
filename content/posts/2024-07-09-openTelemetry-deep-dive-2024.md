@@ -9,7 +9,7 @@ catalog: true
 tags:
     - golang
 ---
-![OpenTelemetry Demystified: From Concept to Implementation](/static/images/posts/2024/OpenTelemetry.png)
+![OpenTelemetry Demystified: From Concept to Implementation](/static/images/posts/2024/openTelemetry/OpenTelemetry.png)
 
 
 ## Introduction to OpenTelemetry

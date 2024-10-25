@@ -4,7 +4,6 @@ title:      Getting Started with PostgreSQL:- Essential psql Command Line Skills
 subtitle:    "\"PostgreSQL and PSQL Basics for Beginners\""
 date:       2024-05-18
 author:     Backend Byte
-header-img: img/post-bg-2015.jpg
 catalog: true
 tags:
     - psql

@@ -4,12 +4,11 @@ title:      Race Condition between Database and Application in Docker Container
 subtitle:    "\"Race Condition between Database and Application in Docker Container\""
 date:       2024-07-08
 author:     Backend Byte
-header-img: img/post-bg-2015.jpg
 catalog: true
 tags:
     - db
 ---
-![Race Condition between Database and Application in Docker Container](/img/race-condition.png)
+![Race Condition between Database and Application in Docker Container](/static/images/posts/2024/race-condition/race-condition.png)
 
 In the realm of containerized applications, particularly those orchestrated with Docker, developers often encounter a subtle yet critical challenge: managing the startup sequence of interdependent services. One of the most common and potentially problematic scenarios is the race condition that can occur between a database container and an application container. This article will provide an in-depth exploration of this race condition, with a focus on Go-based applications, and offer strategies to mitigate it effectively.
 

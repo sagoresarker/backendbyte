@@ -9,7 +9,7 @@ catalog: true
 tags:
     - golang
 ---
-![Understanding Go's net/http Package: A Comprehensive Guide](/img/net-http-package-golang.png)
+![Understanding Go's net/http Package: A Comprehensive Guide](/static/images/posts/2024/net-http/net-http-package-golang.png)
 
 
 Go's net/http package is a powerful and versatile library for building HTTP clients and servers. It provides a robust set of tools for handling HTTP requests and responses, making it an essential component for web development in Go. This article will dive deep into the net/http package, exploring its core concepts, key features, and practical applications.
