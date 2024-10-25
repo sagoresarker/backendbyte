@@ -1,15 +1,28 @@
 ---
-layout:     post
-title:      "Understanding Go's net/http Package: A Comprehensive Guide"
-subtitle:    "\"net/http Package in Golang\""
-date:       2024-07-09
-author:     Backend Byte
-header-img: img/post-bg-2015.jpg
-catalog: true
-tags:
-    - golang
+title: "Understanding Go's net/http Package: A Comprehensive Guide"
+date: 2024-07-09
+author: "Backend Byte"
+description: "In-depth guide to Go's net/http package for building web applications."
+tags: ["golang"]
+showToc: true
+TocOpen: false
+draft: false
+hidemeta: true
+comments: true
+canonicalURL: "http://backendbyte.com/posts/2024-07-09-golang-net-http/"
+disableHLJS: false
+disableShare: false
+hideSummary: false
+searchHidden: false
+ShowReadingTime: true
+ShowBreadCrumbs: true
+ShowPostNavLinks: true
+ShowWordCount: true
+ShowRssButtonInSectionTermList: true
+UseHugoToc: true
 ---
-![Understanding Go's net/http Package: A Comprehensive Guide](/static/images/posts/2024/net-http/net-http-package-golang.png)
+
+![Understanding Go's net/http Package: A Comprehensive Guide](/images/posts/2024/net-http/net-http-package-golang.png)
 
 
 Go's net/http package is a powerful and versatile library for building HTTP clients and servers. It provides a robust set of tools for handling HTTP requests and responses, making it an essential component for web development in Go. This article will dive deep into the net/http package, exploring its core concepts, key features, and practical applications.

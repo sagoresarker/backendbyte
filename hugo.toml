@@ -67,6 +67,11 @@ Here you'll find practical guides, tips, and real-world solutions to common back
     url = "/tags/"
     weight = 4
 
+  [[menu.main]]
+    name = "Search"
+    url = "/search/"
+    weight = 10
+
 # Taxonomies
 [taxonomies]
   category = "categories"

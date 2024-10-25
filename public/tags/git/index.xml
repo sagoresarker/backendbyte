@@ -13,10 +13,7 @@
       <pubDate>Fri, 17 May 2024 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/2024-05-17-git-notes-2024/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;../../static/images/posts/default/post-bg-desk.jpg&#34; alt=&#34;Header Image&#34;  /&gt;
-
-As a engineer at Poridhi, I frequently need to use Git commands to manage my codebase, track changes, collaborate with team members, and maintain an organized workflow. Over the past five months of working in this industry, I&amp;rsquo;ve become familiar with several essential Git commands that have been invaluable in my daily work.&lt;/p&gt;
-&lt;p&gt;In this blog post, I&amp;rsquo;ll share these essential Git commands and provide a brief explanation along with a small example for each one. Whether you&amp;rsquo;re a beginner or an experienced developer, mastering these commands can greatly enhance your productivity and efficiency when working with Git repositories.&lt;/p&gt;</description>
+      <description>A comprehensive guide to essential Git commands for daily use, based on real-world experience.</description>
     </item>
     
   </channel>

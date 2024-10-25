@@ -1,16 +1,28 @@
 ---
-layout:     post
-title:      "OpenTelemetry Demystified: From Concept to Implementation"
-subtitle:    "\"A Comprehensive Guide to Mastering Distributed Tracing, Metrics, and Observability in Modern Software Systems\""
-date:       2024-07-09
-author:     Backend Byte
-header-img: img/post-bg-2015.jpg
-catalog: true
-tags:
-    - golang
+title: "OpenTelemetry Demystified: From Concept to Implementation"
+date: 2024-07-09
+author: "Backend Byte"
+description: "A comprehensive guide to understanding and implementing OpenTelemetry for observability."
+tags: ["golang"]
+showToc: true
+TocOpen: false
+draft: false
+hidemeta: true
+comments: true
+canonicalURL: "http://backendbyte.com/posts/2024-07-09-opentelemetry-guide/"
+disableHLJS: false
+disableShare: false
+hideSummary: false
+searchHidden: false
+ShowReadingTime: true
+ShowBreadCrumbs: true
+ShowPostNavLinks: true
+ShowWordCount: true
+ShowRssButtonInSectionTermList: true
+UseHugoToc: true
 ---
-![OpenTelemetry Demystified: From Concept to Implementation](/static/images/posts/2024/openTelemetry/OpenTelemetry.png)
 
+![OpenTelemetry Demystified: From Concept to Implementation](/images/posts/2024/openTelemetry/OpenTelemetry.png)
 
 ## Introduction to OpenTelemetry
 

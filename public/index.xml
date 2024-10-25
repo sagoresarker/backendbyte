@@ -13,10 +13,7 @@
       <pubDate>Tue, 09 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/2024-07-09-opentelemetry-deep-dive-2024/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;./static/images/posts/2024/openTelemetry/OpenTelemetry.png&#34; alt=&#34;OpenTelemetry Demystified: From Concept to Implementation&#34;  /&gt;
-&lt;/p&gt;
-&lt;h2 id=&#34;introduction-to-opentelemetry&#34;&gt;Introduction to OpenTelemetry&lt;/h2&gt;
-&lt;p&gt;OpenTelemetry is an open-source observability framework designed to create and manage telemetry data such as traces, metrics, and logs. It provides a collection of tools, APIs, and SDKs used to instrument, generate, collect, and export telemetry data for analysis. The project aims to standardize the way telemetry data is collected and transmitted, making it easier for organizations to gain insights into their software&amp;rsquo;s performance and behavior across different environments and technologies.&lt;/p&gt;</description>
+      <description>A comprehensive guide to understanding and implementing OpenTelemetry for observability.</description>
     </item>
     
     <item>
@@ -25,11 +22,7 @@
       <pubDate>Tue, 09 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/2024-07-09-db-net-http-package-golang-2024/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;./static/images/posts/2024/net-http/net-http-package-golang.png&#34; alt=&#34;Understanding Go&amp;rsquo;s net/http Package: A Comprehensive Guide&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;Go&amp;rsquo;s net/http package is a powerful and versatile library for building HTTP clients and servers. It provides a robust set of tools for handling HTTP requests and responses, making it an essential component for web development in Go. This article will dive deep into the net/http package, exploring its core concepts, key features, and practical applications.&lt;/p&gt;
-&lt;h2 id=&#34;overview-of-the-nethttp-package&#34;&gt;Overview of the net/http Package:&lt;/h2&gt;
-&lt;p&gt;The net/http package is part of Go&amp;rsquo;s standard library and offers a high-level interface for HTTP client and server implementations. It abstracts away many of the complexities involved in network communication, allowing developers to focus on application logic rather than low-level network details.&lt;/p&gt;</description>
+      <description>In-depth guide to Go&amp;#39;s net/http package for building web applications.</description>
     </item>
     
     <item>
@@ -38,11 +31,7 @@
       <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/2024-07-08-postgres-bulk-insert-2024/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;./static/images/posts/2024/postgres-copy-cmd/postgresql-copy-cmd.png&#34; alt=&#34;Optimizing PostgreSQL for Large-Scale Data Insertion&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;When dealing with massive datasets in PostgreSQL, efficiency becomes crucial. Recently, I faced a challenge while inserting 20 million records into a database while working on one of my hobby projects. This experience led me to explore various optimization techniques, from query optimization to server configuration tweaks.&lt;/p&gt;
-&lt;h2 id=&#34;the-journey-from-insert-to-copy&#34;&gt;The Journey from INSERT to COPY&lt;/h2&gt;
-&lt;p&gt;Initially, I used the traditional INSERT approach, which proved to be excruciatingly slow, taking hours to complete. This prompted me to search for a more efficient solution, leading me to the COPY command.&lt;/p&gt;</description>
+      <description>Techniques for optimizing PostgreSQL performance in large-scale data insertion scenarios.</description>
     </item>
     
     <item>
@@ -51,9 +40,7 @@
       <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/2024-07-08-db-race-condition-notes-2024/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;./static/images/posts/2024/race-condition/race-condition.png&#34; alt=&#34;Race Condition between Database and Application in Docker Container&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;In the realm of containerized applications, particularly those orchestrated with Docker, developers often encounter a subtle yet critical challenge: managing the startup sequence of interdependent services. One of the most common and potentially problematic scenarios is the race condition that can occur between a database container and an application container. This article will provide an in-depth exploration of this race condition, with a focus on Go-based applications, and offer strategies to mitigate it effectively.&lt;/p&gt;</description>
+      <description>Exploring race conditions between database and application layers in Docker containers.</description>
     </item>
     
     <item>
@@ -62,21 +49,16 @@
       <pubDate>Sat, 18 May 2024 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/2024-05-18-argocd-deployment-notes-2024/</guid>
-      <description>&lt;h2 id=&#34;before-starting-lets-visualize-a-illustration-how-it-works&#34;&gt;Before starting, lets visualize a illustration how it works&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;./static/images/posts/2024/argocd/nginx-ingress.png&#34; alt=&#34;nginx-ingress.png&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;User initiates a request to a web application hosted on a cluster server. DNS resolution directs the user to Cloudflare. Cloudflare acts as a reverse proxy, terminating the SSL/TLS connection and initiating a tunnel to the Nginx ingress controller in the Kubernetes cluster. The Nginx ingress controller routes the request based on the Host header to the appropriate service within the cluster. The service distributes traffic across pods running the application. A selected pod processes the request and generates a response. The response travels back through the Nginx ingress controller, Cloudflare tunnel, and finally to the user&amp;rsquo;s device.&lt;/p&gt;</description>
+      <description>Setting Up ArgoCD: A Guide to Configuration with Nginx-Ingress and Cloudflare Tunnel on Bare Meta.</description>
     </item>
     
     <item>
-      <title>Getting Started with PostgreSQL:- Essential psql Command Line Skills for Beginners</title>
+      <title>Getting Started with PostgreSQL: Essential psql Command Line Skills for Beginners</title>
       <link>http://localhost:1313/posts/2024-05-18-psql-commands-notes-2024/</link>
       <pubDate>Sat, 18 May 2024 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/2024-05-18-psql-commands-notes-2024/</guid>
-      <description>&lt;p&gt;Nearly three years ago, I upgraded to Ubuntu 22.04 LTS. After the upgrade, I ran into problems with pgAdmin 4 when working with PostgreSQL. As a result, I had to rely on the psql interactive shell for all my tasks. Here, I will share some basic psql commands that I frequently use.&lt;/p&gt;
-&lt;h2 id=&#34;1-enter-psql-shell&#34;&gt;1. Enter psql shell&lt;/h2&gt;
-&lt;p&gt;To interact with PostgreSQL from the terminal, enter the &lt;code&gt;psql&lt;/code&gt; shell. To enter the &lt;code&gt;psql&lt;/code&gt; shell, type:&lt;/p&gt;</description>
+      <description>A beginner&amp;#39;s guide to mastering PostgreSQL and essential psql command line skills.</description>
     </item>
     
     <item>
@@ -85,13 +67,7 @@
       <pubDate>Sat, 18 May 2024 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/2024-05-18-k8s-setup-notes-2024/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;This article provides a step-by-step guide for setting up a Kubernetes cluster using k3s on a bare metal server. k3s is a lightweight Kubernetes distribution designed for resource-constrained environments, making it ideal for bare metal setups.&lt;/p&gt;
-&lt;h2 id=&#34;installation-steps&#34;&gt;Installation Steps&lt;/h2&gt;
-&lt;h3 id=&#34;1-install-k3s&#34;&gt;1. Install k3s&lt;/h3&gt;
-&lt;p&gt;Run the following command to install k3s on your bare metal server:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -sfL &amp;lt;https://get.k3s.io&amp;gt; | sh -
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This command fetches the k3s installation script from the internet and executes it on your server.&lt;/p&gt;</description>
+      <description>Configure Kubernetes on a bare metal server with k3s for streamlined deployment.</description>
     </item>
     
     <item>
@@ -100,11 +76,9 @@
       <pubDate>Fri, 17 May 2024 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/2024-05-17-git-notes-2024/</guid>
-      <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;./static/images/posts/default/post-bg-desk.jpg&#34; alt=&#34;Header Image&#34;  /&gt;
-
-As a engineer at Poridhi, I frequently need to use Git commands to manage my codebase, track changes, collaborate with team members, and maintain an organized workflow. Over the past five months of working in this industry, I&amp;rsquo;ve become familiar with several essential Git commands that have been invaluable in my daily work.&lt;/p&gt;
-&lt;p&gt;In this blog post, I&amp;rsquo;ll share these essential Git commands and provide a brief explanation along with a small example for each one. Whether you&amp;rsquo;re a beginner or an experienced developer, mastering these commands can greatly enhance your productivity and efficiency when working with Git repositories.&lt;/p&gt;</description>
+      <description>A comprehensive guide to essential Git commands for daily use, based on real-world experience.</description>
     </item>
+    
     
     
   </channel>

@@ -1,18 +1,30 @@
 ---
-layout:     post
-title:      ArgoCD configuration on Bare metal with nginx-ingress and cloudflare tunnel
-subtitle:    "\"Setting Up ArgoCD: A Guide to Configuration with Nginx-Ingress and Cloudflare Tunnel on Bare Metal\""
-date:       2024-05-18
-author:     Backend Byte
-header-img: img/post-bg-2015.jpg
-catalog: true
-tags:
-    - argocd
+title: "ArgoCD configuration on Bare metal with nginx-ingress and cloudflare tunnel"
+date: 2024-05-18
+author: "Backend Byte"
+description: "Setting Up ArgoCD: A Guide to Configuration with Nginx-Ingress and Cloudflare Tunnel on Bare Meta."
+tags: ["argocd"]
+showToc: true
+TocOpen: false
+draft: false
+hidemeta: true
+comments: true
+canonicalURL: "http://backendbyte.com/posts/2024-05-17-git-notes-2024/"
+disableHLJS: false
+disableShare: false
+hideSummary: false
+searchHidden: false
+ShowReadingTime: true
+ShowBreadCrumbs: true
+ShowPostNavLinks: true
+ShowWordCount: true
+ShowRssButtonInSectionTermList: true
+UseHugoToc: true
 ---
 
 ## Before starting, lets visualize a illustration how it works
 
-![nginx-ingress.png](/static/images/posts/2024/argocd/nginx-ingress.png)
+![nginx-ingress.png](/images/posts/2024/argocd/nginx-ingress.png)
 
 User initiates a request to a web application hosted on a cluster server. DNS resolution directs the user to Cloudflare. Cloudflare acts as a reverse proxy, terminating the SSL/TLS connection and initiating a tunnel to the Nginx ingress controller in the Kubernetes cluster. The Nginx ingress controller routes the request based on the Host header to the appropriate service within the cluster. The service distributes traffic across pods running the application. A selected pod processes the request and generates a response. The response travels back through the Nginx ingress controller, Cloudflare tunnel, and finally to the user's device.
 
@@ -131,11 +143,11 @@ Modify the simply set `server.insecure: "true"` in the `argocd-cmd-params-cm` Co
 sudo kubectl -n argocd edit configmap argocd-cmd-params-cm
 ```
 
-![configmap](/static/images/posts/2024/argocd/configmap.png)
+![configmap](/images/posts/2024/argocd/configmap.png)
 
 Make sure to stop redirection http to https inside cloudflare
 
-![cloudflare-dashboard](/static/images/posts/2024/argocd/cloudflare-dashboard.png)
+![cloudflare-dashboard](/images/posts/2024/argocd/cloudflare-dashboard.png)
 
 Next make the change in nginx ingress controller deployment to add the enable-ssl-passthrough flag as shown below
 
@@ -143,7 +155,7 @@ Next make the change in nginx ingress controller deployment to add the enable-ss
 kubectl edit deploy ingress-nginx-controller -n ingress-nginx
 ```
 
-![spec-format](/static/images/posts/2024/argocd/spec-format.png)
+![spec-format](/images/posts/2024/argocd/spec-format.png)
 
 Now its time to apply those two argocd-ingress.yml and argocd-tunnel.yml file
 
@@ -172,7 +184,7 @@ kubectl get svc -n argocd
 
 ## Look for argocd-server ip
 
-![kubectl-output](/static/images/posts/2024/argocd/kubectl-output.png)
+![kubectl-output](/images/posts/2024/argocd/kubectl-output.png)
 
 ## Login to argocd
 

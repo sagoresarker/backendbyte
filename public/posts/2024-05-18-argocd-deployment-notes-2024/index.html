@@ -7,12 +7,9 @@
 <meta name="robots" content="noindex, nofollow">
 <title>ArgoCD configuration on Bare metal with nginx-ingress and cloudflare tunnel | Backend Byte</title>
 <meta name="keywords" content="argocd">
-<meta name="description" content="Before starting, lets visualize a illustration how it works
-
-
-User initiates a request to a web application hosted on a cluster server. DNS resolution directs the user to Cloudflare. Cloudflare acts as a reverse proxy, terminating the SSL/TLS connection and initiating a tunnel to the Nginx ingress controller in the Kubernetes cluster. The Nginx ingress controller routes the request based on the Host header to the appropriate service within the cluster. The service distributes traffic across pods running the application. A selected pod processes the request and generates a response. The response travels back through the Nginx ingress controller, Cloudflare tunnel, and finally to the user&rsquo;s device.">
+<meta name="description" content="Setting Up ArgoCD: A Guide to Configuration with Nginx-Ingress and Cloudflare Tunnel on Bare Meta.">
 <meta name="author" content="Backend Byte">
-<link rel="canonical" href="http://localhost:1313/posts/2024-05-18-argocd-deployment-notes-2024/">
+<link rel="canonical" href="http://backendbyte.com/posts/2024-05-17-git-notes-2024/">
 <link crossorigin="anonymous" href="../../assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="../../assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
@@ -122,6 +119,11 @@ User initiates a request to a web application hosted on a cluster server. DNS re
                     <span>Tags</span>
                 </a>
             </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -133,78 +135,56 @@ User initiates a request to a web application hosted on a cluster server. DNS re
     <h1 class="post-title">
       ArgoCD configuration on Bare metal with nginx-ingress and cloudflare tunnel
     </h1>
-    <div class="post-meta">&lt;span title=&#39;2024-05-18 00:00:00 &#43;0000 UTC&#39;&gt;May 18, 2024&lt;/span&gt;&amp;nbsp;·&amp;nbsp;4 min&amp;nbsp;·&amp;nbsp;Backend Byte
-
-</div>
+    <div class="post-description">
+      Setting Up ArgoCD: A Guide to Configuration with Nginx-Ingress and Cloudflare Tunnel on Bare Meta.
+    </div>
   </header> <div class="toc">
     <details >
         <summary accesskey="c" title="(Alt + C)">
             <span class="details">Table of Contents</span>
         </summary>
 
-        <div class="inner"><ul><ul>
-                <li>
-                    <a href="#before-starting-lets-visualize-a-illustration-how-it-works" aria-label="Before starting, lets visualize a illustration how it works">Before starting, lets visualize a illustration how it works</a></li></ul>
-                    
-                <li>
-                    <a href="#install-and-configure-argocd-and-nginx-ingress" aria-label="Install and configure argocd and nginx-ingress">Install and configure argocd and nginx-ingress</a><ul>
-                        
-                <li>
-                    <a href="#download-with-curl-argocdcli" aria-label="Download With Curl (argocd CLI)"><strong>Download With Curl (</strong><code>argocd</code> CLI)</a></li>
-                <li>
-                    <a href="#retrieve-this-password-using-theargocdcli" aria-label="Retrieve this password using the argocd CLI:">Retrieve this password using the <code>argocd</code> CLI:</a></li>
-                <li>
-                    <a href="#to-edit-any-service-of-argocd" aria-label="To edit any service of argocd">To edit any service of argocd</a></li>
-                <li>
-                    <a href="#create-argocd-ingress-rule-to-route-trafic" aria-label="Create argocd-ingress rule to route trafic">Create argocd-ingress rule to route trafic</a></li>
-                <li>
-                    <a href="#create-argocd-tunnel-for-configure-cloudflare" aria-label="Create argocd-tunnel for configure cloudflare">Create argocd-tunnel for configure cloudflare</a></li></ul>
-                </li>
-                <li>
-                    <a href="#configure-nginx-ingress-for-handle-ingress-trafic" aria-label="Configure nginx-ingress for handle ingress trafic">Configure nginx-ingress for handle ingress trafic</a><ul>
-                        
-                <li>
-                    <a href="#to-make-everything-work-perfectly-roleout-the-core-dns-from-kube-system-namespace-and-restart-deployment-from-argocd-namespace" aria-label="To make everything work perfectly, roleout the core-dns from kube-system namespace and restart deployment from argocd namespace.">To make everything work perfectly, roleout the core-dns from kube-system namespace and restart deployment from argocd namespace.</a></li></ul>
-                </li>
-                <li>
-                    <a href="#operating-procedure" aria-label="Operating procedure">Operating procedure</a><ul>
-                        
-                <li>
-                    <a href="#create-application" aria-label="Create Application">Create Application</a></li>
-                <li>
-                    <a href="#look-for-argocd-server-ip" aria-label="Look for argocd-server ip">Look for argocd-server ip</a></li>
-                <li>
-                    <a href="#login-to-argocd" aria-label="Login to argocd">Login to argocd</a></li>
-                <li>
-                    <a href="#create-application-using-cli" aria-label="Create application (using cli)">Create application (using cli)</a></li>
-                <li>
-                    <a href="#sync-application" aria-label="sync application">sync application</a></li>
-                <li>
-                    <a href="#check-app-logs" aria-label="Check app logs">Check app logs</a></li>
-                <li>
-                    <a href="#rollback-with-argo-cd-cli" aria-label="Rollback with Argo CD CLI:">Rollback with Argo CD CLI:</a><ul>
-                        
-                <li>
-                    <a href="#rollout-with-argo-cd-cli" aria-label="Rollout with Argo CD CLI:">Rollout with Argo CD CLI:</a></li></ul>
-                </li>
-                <li>
-                    <a href="#if-needed" aria-label="if needed,">if needed,</a></li>
-                <li>
-                    <a href="#for-your-information-to-delete-cdr-and-argocd-app-" aria-label="For your information, to delete CDR and argocd app-">For your information, to delete CDR and argocd app-</a></li>
-                <li>
-                    <a href="#delete-crds" aria-label="Delete CRDs">Delete CRDs</a></li>
-                <li>
-                    <a href="#delete-argocd-apps" aria-label="Delete argocd apps">Delete argocd apps</a>
-                </li>
-            </ul>
-            </li>
-            </ul>
+        <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#before-starting-lets-visualize-a-illustration-how-it-works">Before starting, lets visualize a illustration how it works</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#download-with-curl-argocdcli"><strong>Download With Curl (</strong><code>argocd</code> CLI)</a></li>
+    <li><a href="#retrieve-this-password-using-theargocdcli">Retrieve this password using the <code>argocd</code> CLI:</a></li>
+    <li><a href="#to-edit-any-service-of-argocd">To edit any service of argocd</a></li>
+    <li><a href="#create-argocd-ingress-rule-to-route-trafic">Create argocd-ingress rule to route trafic</a></li>
+    <li><a href="#create-argocd-tunnel-for-configure-cloudflare">Create argocd-tunnel for configure cloudflare</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#to-make-everything-work-perfectly-roleout-the-core-dns-from-kube-system-namespace-and-restart-deployment-from-argocd-namespace">To make everything work perfectly, roleout the core-dns from kube-system namespace and restart deployment from argocd namespace.</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#create-application">Create Application</a></li>
+    <li><a href="#look-for-argocd-server-ip">Look for argocd-server ip</a></li>
+    <li><a href="#login-to-argocd">Login to argocd</a></li>
+    <li><a href="#create-application-using-cli">Create application (using cli)</a></li>
+    <li><a href="#sync-application">sync application</a></li>
+    <li><a href="#check-app-logs">Check app logs</a></li>
+    <li><a href="#rollback-with-argo-cd-cli">Rollback with Argo CD CLI:</a>
+      <ul>
+        <li><a href="#rollout-with-argo-cd-cli">Rollout with Argo CD CLI:</a></li>
+      </ul>
+    </li>
+    <li><a href="#if-needed">if needed,</a></li>
+    <li><a href="#for-your-information-to-delete-cdr-and-argocd-app-">For your information, to delete CDR and argocd app-</a></li>
+    <li><a href="#delete-crds">Delete CRDs</a></li>
+    <li><a href="#delete-argocd-apps">Delete argocd apps</a></li>
+  </ul>
+</nav>
         </div>
     </details>
 </div>
 
   <div class="post-content"><h2 id="before-starting-lets-visualize-a-illustration-how-it-works">Before starting, lets visualize a illustration how it works<a hidden class="anchor" aria-hidden="true" href="#before-starting-lets-visualize-a-illustration-how-it-works">#</a></h2>
-<p><img loading="lazy" src="../../static/images/posts/2024/argocd/nginx-ingress.png" alt="nginx-ingress.png"  />
+<p><img loading="lazy" src="../../images/posts/2024/argocd/nginx-ingress.png" alt="nginx-ingress.png"  />
 </p>
 <p>User initiates a request to a web application hosted on a cluster server. DNS resolution directs the user to Cloudflare. Cloudflare acts as a reverse proxy, terminating the SSL/TLS connection and initiating a tunnel to the Nginx ingress controller in the Kubernetes cluster. The Nginx ingress controller routes the request based on the Host header to the appropriate service within the cluster. The service distributes traffic across pods running the application. A selected pod processes the request and generates a response. The response travels back through the Nginx ingress controller, Cloudflare tunnel, and finally to the user&rsquo;s device.</p>
 <h1 id="install-and-configure-argocd-and-nginx-ingress">Install and configure argocd and nginx-ingress<a hidden class="anchor" aria-hidden="true" href="#install-and-configure-argocd-and-nginx-ingress">#</a></h1>
@@ -287,14 +267,14 @@ User initiates a request to a web application hosted on a cluster server. DNS re
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ae81ff">kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/baremetal/deploy.yaml</span>
 </span></span></code></pre></div><p>Modify the simply set <code>server.insecure: &quot;true&quot;</code> in the <code>argocd-cmd-params-cm</code> ConfigMap</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo kubectl -n argocd edit configmap argocd-cmd-params-cm
-</span></span></code></pre></div><p><img loading="lazy" src="../../static/images/posts/2024/argocd/configmap.png" alt="configmap"  />
+</span></span></code></pre></div><p><img loading="lazy" src="../../images/posts/2024/argocd/configmap.png" alt="configmap"  />
 </p>
 <p>Make sure to stop redirection http to https inside cloudflare</p>
-<p><img loading="lazy" src="../../static/images/posts/2024/argocd/cloudflare-dashboard.png" alt="cloudflare-dashboard"  />
+<p><img loading="lazy" src="../../images/posts/2024/argocd/cloudflare-dashboard.png" alt="cloudflare-dashboard"  />
 </p>
 <p>Next make the change in nginx ingress controller deployment to add the enable-ssl-passthrough flag as shown below</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl edit deploy ingress-nginx-controller -n ingress-nginx
-</span></span></code></pre></div><p><img loading="lazy" src="../../static/images/posts/2024/argocd/spec-format.png" alt="spec-format"  />
+</span></span></code></pre></div><p><img loading="lazy" src="../../images/posts/2024/argocd/spec-format.png" alt="spec-format"  />
 </p>
 <p>Now its time to apply those two argocd-ingress.yml and argocd-tunnel.yml file</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo kubectl apply -f argocd-ingress.yml
@@ -308,7 +288,7 @@ User initiates a request to a web application hosted on a cluster server. DNS re
 <p>before creating application, you must login to the sysyem. first check the argocd-server svc ip, then</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl get svc -n argocd
 </span></span></code></pre></div><h2 id="look-for-argocd-server-ip">Look for argocd-server ip<a hidden class="anchor" aria-hidden="true" href="#look-for-argocd-server-ip">#</a></h2>
-<p><img loading="lazy" src="../../static/images/posts/2024/argocd/kubectl-output.png" alt="kubectl-output"  />
+<p><img loading="lazy" src="../../images/posts/2024/argocd/kubectl-output.png" alt="kubectl-output"  />
 </p>
 <h2 id="login-to-argocd">Login to argocd<a hidden class="anchor" aria-hidden="true" href="#login-to-argocd">#</a></h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>argocd login 10.43.168.110
@@ -373,7 +353,7 @@ User initiates a request to a web application hosted on a cluster server. DNS re
   <a class="next" href="http://localhost:1313/posts/2024-05-18-psql-commands-notes-2024/">
     <span class="title">Next »</span>
     <br>
-    <span>Getting Started with PostgreSQL:- Essential psql Command Line Skills for Beginners</span>
+    <span>Getting Started with PostgreSQL: Essential psql Command Line Skills for Beginners</span>
   </a>
 </nav>
 

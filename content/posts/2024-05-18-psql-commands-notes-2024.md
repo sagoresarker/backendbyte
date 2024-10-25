@@ -1,15 +1,27 @@
 ---
-layout:     post
-title:      Getting Started with PostgreSQL:- Essential psql Command Line Skills for Beginners
-subtitle:    "\"PostgreSQL and PSQL Basics for Beginners\""
-date:       2024-05-18
-author:     Backend Byte
-catalog: true
-tags:
-    - psql
+title: "Getting Started with PostgreSQL: Essential psql Command Line Skills for Beginners"
+date: 2024-05-18
+author: "Backend Byte"
+description: "A beginner's guide to mastering PostgreSQL and essential psql command line skills."
+tags: ["psql"]
+showToc: true
+TocOpen: false
+draft: false
+hidemeta: true
+comments: true
+canonicalURL: "http://backendbyte.com/posts/2024-05-18-postgresql-psql-basics/"
+disableHLJS: false
+disableShare: false
+hideSummary: false
+searchHidden: false
+ShowReadingTime: true
+ShowBreadCrumbs: true
+ShowPostNavLinks: true
+ShowWordCount: true
+ShowRssButtonInSectionTermList: true
+UseHugoToc: true
 ---
-
-
+![Getting Started with PostgreSQL: Essential psql Command Line Skills for Beginners](/images/posts/2024/postgres-copy-cmd/postgresql-copy-cmd.png)
 Nearly three years ago, I upgraded to Ubuntu 22.04 LTS. After the upgrade, I ran into problems with pgAdmin 4 when working with PostgreSQL. As a result, I had to rely on the psql interactive shell for all my tasks. Here, I will share some basic psql commands that I frequently use.
 
 ## 1. Enter psql shell
