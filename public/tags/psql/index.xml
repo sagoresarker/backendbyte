@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Psql on Backend Byte</title>
+    <link>http://localhost:1313/tags/psql/</link>
+    <description>Recent content in Psql on Backend Byte</description>
+    <generator>Hugo -- 0.134.3</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 18 May 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/psql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Started with PostgreSQL:- Essential psql Command Line Skills for Beginners</title>
+      <link>http://localhost:1313/posts/2024-05-18-psql-commands-notes-2024/</link>
+      <pubDate>Sat, 18 May 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2024-05-18-psql-commands-notes-2024/</guid>
+      <description>&lt;p&gt;Nearly three years ago, I upgraded to Ubuntu 22.04 LTS. After the upgrade, I ran into problems with pgAdmin 4 when working with PostgreSQL. As a result, I had to rely on the psql interactive shell for all my tasks. Here, I will share some basic psql commands that I frequently use.&lt;/p&gt;
+&lt;h2 id=&#34;1-enter-psql-shell&#34;&gt;1. Enter psql shell&lt;/h2&gt;
+&lt;p&gt;To interact with PostgreSQL from the terminal, enter the &lt;code&gt;psql&lt;/code&gt; shell. To enter the &lt;code&gt;psql&lt;/code&gt; shell, type:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

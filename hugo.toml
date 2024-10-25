@@ -1,0 +1,87 @@
+theme = "PaperMod"
+relativeURLs = true
+baseURL = "http://backendbyte.com"
+title = "Backend Byte"
+author = "Sagore Sarker"
+languageCode = "en"
+paginate = 4
+
+[params]
+  description = "Every failure is leading towards success."
+  defaultTheme = "auto"
+  ShowShareButtons = true
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowRssButtonInSectionTermList = true
+  ShowToc = true
+
+[params.homeInfoParams]
+    Title = "Hi there 👋"
+    Content = """
+Welcome to Backend Byte! This blog is dedicated to sharing knowledge and experiences in backend development,
+focusing on Go, Kubernetes, PostgreSQL, and modern cloud-native technologies.
+
+Here you'll find practical guides, tips, and real-world solutions to common backend challenges.
+    """
+
+[params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary", "content"]
+
+[params.assets]
+    favicon = "favicon.ico"
+    favicon16x16 = "favicon-16x16.png"
+    favicon32x32 = "favicon-32x32.png"
+    apple_touch_icon = "apple-touch-icon.png"
+    safari_pinned_tab = "safari-pinned-tab.svg"
+
+[params.label]
+    text = "Backend Byte"
+    icon = "logo.png"
+    iconHeight = 35
+
+# Menu Items
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "archives"
+    name = "Archives"
+    url = "/archives/"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 4
+
+# Taxonomies
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+# Privacy Settings
+[privacy]
+  [privacy.twitter]
+    disabled = false
+    enableDNT = true
+
+  [privacy.youtube]
+    disabled = false
+    privacyEnhanced = true
+
+# Output Formats for Search
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
