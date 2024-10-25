@@ -6,7 +6,7 @@ description: "A comprehensive guide to understanding and implementing OpenTeleme
 tags: ["golang"]
 showToc: true
 TocOpen: false
-draft: false
+draft: true
 hidemeta: false
 comments: true
 canonicalURL: "http://backendbyte.com/posts/2024-07-09-opentelemetry-guide/"
