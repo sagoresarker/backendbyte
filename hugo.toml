@@ -1,10 +1,11 @@
 theme = "PaperMod"
-relativeURLs = true
 baseURL = "http://backendbyte.com"
 title = "Backend Byte"
 author = "Sagore Sarker"
 languageCode = "en"
 pagination.pagerSize = 4
+publishDir = "docs"
+canonifyURLs = true
 
 [params]
   description = "Every failure is leading towards success."
@@ -16,6 +17,11 @@ pagination.pagerSize = 4
   ShowCodeCopyButtons = true
   ShowRssButtonInSectionTermList = true
   ShowToc = true
+
+  # Add social media links
+  [[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/sagoresarker"
 
 [params.homeInfoParams]
     Title = "Hi there 👋"
@@ -76,7 +82,6 @@ Here you'll find practical guides, tips, and real-world solutions to common back
 [taxonomies]
   category = "categories"
   tag = "tags"
-  social = "social"
 
 # Privacy Settings
 [privacy]
@@ -91,6 +96,3 @@ Here you'll find practical guides, tips, and real-world solutions to common back
 # Output Formats for Search
 [outputs]
   home = ["HTML", "RSS", "JSON"]
-
-publishDir = "docs"
-canonifyURLs = true
