@@ -21,16 +21,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: false # Don't fetch submodules yet
+          submodules: false
           fetch-depth: 0
 
       - name: Setup theme
         run: |
-          git submodule deinit -f themes/PaperMod
-          git rm -f themes/PaperMod
+          git submodule deinit -f themes/PaperMod || true
+          git rm -f themes/PaperMod || true
           git submodule add -b master https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
           cd themes/PaperMod
-          git checkout a2eb47bb4b805116dcd34c1605d39835121f8dbe
+          git checkout master
+          git pull
           cd ../..
 
       - name: Setup Hugo

@@ -4,7 +4,7 @@ baseURL = "http://backendbyte.com"
 title = "Backend Byte"
 author = "Sagore Sarker"
 languageCode = "en"
-paginate = 4
+pagination.pagerSize = 4
 
 [params]
   description = "Every failure is leading towards success."
@@ -76,6 +76,7 @@ Here you'll find practical guides, tips, and real-world solutions to common back
 [taxonomies]
   category = "categories"
   tag = "tags"
+  social = "social"
 
 # Privacy Settings
 [privacy]
