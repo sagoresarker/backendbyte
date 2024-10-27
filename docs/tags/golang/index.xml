@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Golang on Backend Byte</title><link>http://backendbyte.com/tags/golang/</link><description>Recent content in Golang on Backend Byte</description><generator>Hugo -- 0.134.3</generator><language>en</language><lastBuildDate>Tue, 09 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://backendbyte.com/tags/golang/index.xml" rel="self" type="application/rss+xml"/><item><title>Understanding Go's net/http Package: A Comprehensive Guide</title><link>http://backendbyte.com/posts/2024-07-09-db-net-http-package-golang-2024/</link><pubDate>Tue, 09 Jul 2024 00:00:00 +0000</pubDate><guid>http://backendbyte.com/posts/2024-07-09-db-net-http-package-golang-2024/</guid><description>In-depth guide to Go&amp;#39;s net/http package for building web applications.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Golang on Backend Byte</title>
+    <link>http://localhost:1313/tags/golang/</link>
+    <description>Recent content in Golang on Backend Byte</description>
+    <generator>Hugo -- 0.134.3</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 09 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding Go&#39;s net/http Package: A Comprehensive Guide</title>
+      <link>http://localhost:1313/posts/2024-07-09-db-net-http-package-golang-2024/</link>
+      <pubDate>Tue, 09 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2024-07-09-db-net-http-package-golang-2024/</guid>
+      <description>In-depth guide to Go&amp;#39;s net/http package for building web applications.</description>
+    </item>
+  </channel>
+</rss>
