@@ -36,11 +36,11 @@ Here you'll find practical guides, tips, and real-world solutions to common back
     keys = ["title", "permalink", "summary", "content"]
 
 [params.assets]
-    favicon = "favicon.ico"
-    favicon16x16 = "favicon-16x16.png"
-    favicon32x32 = "favicon-32x32.png"
-    apple_touch_icon = "apple-touch-icon.png"
-    safari_pinned_tab = "safari-pinned-tab.svg"
+    favicon = "/favicon.ico"
+    favicon16x16 = "/favicon-16x16.png"
+    favicon32x32 = "/favicon-32x32.png"
+    apple_touch_icon = "/apple-touch-icon.png"
+    safari_pinned_tab = "/safari-pinned-tab.svg"
 
 [params.label]
     text = "Backend Byte"
@@ -90,3 +90,6 @@ Here you'll find practical guides, tips, and real-world solutions to common back
 # Output Formats for Search
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+
+publishDir = "docs"
+canonifyURLs = true
