@@ -18,10 +18,11 @@ canonifyURLs = true
   ShowRssButtonInSectionTermList = true
   ShowToc = true
 
-  # Add social media links
-  [[params.socialIcons]]
-  name = "github"
-  url = "https://github.com/sagoresarker"
+  # Social Media Links
+  socialIcons = [
+    {name = "github", url = "https://github.com/sagoresarker"},
+    {name = "linkedin", url = "https://www.linkedin.com/in/sagore-sarker/"}
+  ]
 
 [params.homeInfoParams]
     Title = "Hi there 👋"

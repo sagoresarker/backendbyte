@@ -1,11 +1,9 @@
-// Create this file at static/js/search.js
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
 
 let jsonData;
 let fuse;
 
-// Fetch the search index
 const fetchJsonData = async () => {
     try {
         const response = await fetch('/index.json');
@@ -16,7 +14,6 @@ const fetchJsonData = async () => {
     }
 };
 
-// Initialize Fuse.js
 const initFuse = (data) => {
     const options = {
         keys: ['title', 'content', 'tags'],
@@ -67,5 +64,4 @@ searchInput.addEventListener('input', (e) => {
     }
 });
 
-// Initialize search on page load
 fetchJsonData();
